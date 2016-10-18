@@ -76,8 +76,9 @@ void loop() {
   }
   
   // This will send the request to the server
-  client.print("r");
-  delay(500);
+  //do all control stuff here
+//  client.print("r");
+//  delay(500);
   
   // Read all the lines of the reply from server and print them to Serial
   while(client.available()){

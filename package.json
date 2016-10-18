@@ -1,0 +1,28 @@
+{
+  "name": "ball_drop_game",
+  "version": "1.0.0",
+  "description": "Eve and Melanie make a physical wifi controller to play a video game",
+  "main": "ball_server.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evejweinberg/ball_drop_game.git"
+  },
+  "keywords": [
+    "game",
+    "arduino",
+    "node"
+  ],
+  "author": "Eve and Mel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evejweinberg/ball_drop_game/issues"
+  },
+  "homepage": "https://github.com/evejweinberg/ball_drop_game#readme"
+}

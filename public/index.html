@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Eve and Melanie WIN, duh</title>
+
+    <style media="screen">
+        button {
+            width: 200px;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><mark>Play the game</mark></h1>
+    <!-- <p>
+        'w' for up <br> 'a' for LEFT
+        <br>
+    </p> -->
+
+    <form class="up" action="/requests" method="post">
+        <button type="submit" name="up">up</button>
+    </form>
+
+    <form class="left" action="/requests" method="post">
+        <button type="submit" name="left">left</button>
+    </form>
+
+    <form class="right" action="/requests" method="post">
+        <button type="submit" name="right">right</button>
+    </form>
+
+    <form class="down" action="/requests" method="post">
+        <button type="submit" name="down">down</button>
+    </form>
+
+</body>
+
+<script type="text/javascript">
+    //add stuff here t
+    //socket.io stuff
+</script>
+
+</html>
