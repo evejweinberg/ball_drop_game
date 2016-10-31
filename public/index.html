@@ -11,6 +11,7 @@
             height: 60px;
         }
     </style>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -41,6 +42,12 @@
 <script type="text/javascript">
     //add stuff here t
     //socket.io stuff
+    $('#up').click(function() {
+        console.log('im clicked up');
+        $.getJSON('/test', function(data) {
+            console.log(data);
+        });
+    })
 </script>
 
 </html>
