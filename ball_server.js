@@ -9,47 +9,66 @@ server.use('/', express.static('public'));
 server.use(bodyParser.urlencoded({extended:true}))
 
 server.listen(8080);
-server.get('/play', responseToClient)
-server.get('/bye', anotherThingy)
+// server.get('/play', responseToClient)
+// server.get('/bye', anotherhingy)
 // server.post('/requests', doPost)
 
 const net = require('net');
 // 172.22.151.124
-const client = net.connect("8080","172.16.252.152",function(){
+const client = net.connect("8080","172.22.151.124",function(){
 	console.log("connected to server!");
 
-	client.write('n=E++++++M\n');
+	client.write('n=E++yyy+M\n');
 	client.write('i');
 
 
 });
 
+
+// const client2 = net.connect("8080","172.22.151.124",function(){
+// 	console.log("connected to server!");
+//
+// 	client2.write('n=E+++2++M\n');
+// 	client2.write('i');
+//
+//
+// });
+
 setInterval(function(){
   var thing = ['u', 'l', 'r', 'd']
-  client.write(thing[Math.floor(Math.random(thing.length))]);
-  console.log(thing[Math.floor(Math.random(thing.length))])
+  client.write(thing[Math.floor(thing.length * Math.random())]);
+  console.log(thing[Math.floor(thing.length * Math.random())])
   client.write('\r');
   client.write('\n');
 
-},1000)
+},100)
 
-function responseToClient(request, response){
+// setInterval(function(){
+//   var thing = ['u', 'l', 'r', 'd']
+//   client2.write(thing[Math.floor(thing.length * Math.random())]);
+//   console.log(thing[Math.floor(thing.length * Math.random())])
+//   client2.write('\r');
+//   client2.write('\n');
+//
+// },1000)
 
-  console.log(request.query)
-  if (request.query.instruction == 'L'){
-    console.log('left')
-  } else if (request.query.instruction == 'R'){
-        console.log('right')
-  }
-  //respond to client and lets server know we have something
-  console.log(request)
-  response.end("Hello, client!")
-
-  //get -
-  //post - send info to the server, send the header then send data in the body of the request, used of r forms alot
-  // put, delete - get used less
-
-}
+// function responseToClient(request, response){
+//
+//   console.log(request.query)
+//   if (request.query.instruction == 'L'){
+//     console.log('left')
+//   } else if (request.query.instruction == 'R'){
+//         console.log('right')
+//   }
+//   //respond to client and lets server know we have something
+//   console.log(request)
+//   response.end("Hello, client!")
+//
+//   //get -
+//   //post - send info to the server, send the header then send data in the body of the request, used of r forms alot
+//   // put, delete - get used less
+//
+// }
 
 server.post('/requests', function(req, res){
     console.log('we hit test');
@@ -120,14 +139,14 @@ function doPost(request, response){
 }
 */
 
-function anotherThingy(request,response){
-    console.log(request.connection)
-    console.log(request.connection.address)
-    //end is always a text string, ussually empty
-    response.end("Hello, cleint!")
-    //response.write
-    //response.header
-}
+// function anotherThingy(request,response){
+//     console.log(request.connection)
+//     console.log(request.connection.address)
+//     //end is always a text string, ussually empty
+//     response.end("Hello, cleint!")
+//     //response.write
+//     //response.header
+// }
 
 
 
